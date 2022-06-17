@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  web:
+    image: sudoku:latest
+    build: .
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/sudoku
+    ports:
+      - "3000:3000"
