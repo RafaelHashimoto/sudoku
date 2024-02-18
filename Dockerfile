@@ -1,7 +1,9 @@
-FROM node:17-alpine
+FROM node:20.11-alpine
+
 WORKDIR /sudoku
 RUN apk update
-RUN npm install -g npm@8.10.0
+RUN npm install --location=global npm@10.4.0
+
 ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json /sudoku/package.json
-CMD ["npm", "start"]
+# COPY package.json /sudoku/package.json
+
