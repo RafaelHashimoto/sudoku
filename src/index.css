@@ -34,22 +34,17 @@ body {
   padding-block: 0px !important;
   padding-inline: 0px !important;
   text-align:center;
-}
-
-input[type='number']::-webkit-inner-spin-button, 
-input[type='number']::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    margin: 0;
-    
-
-}
-
-.board-item-enabled {
   background-color: var(--secondary-color);
   color: var(--text-color);
 }
 
-.board-item-disabled {
+.board-item:disabled {
   background-color: var(--background-color);
   color: var(--secondary-color);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

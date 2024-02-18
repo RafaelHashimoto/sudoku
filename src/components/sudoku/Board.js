@@ -3,10 +3,11 @@ import Context from './Context'
 import Cell from './Cell'
 
 const Board = () => {
+  const { board, setBoard } = useContext(Context)
 
   const renderRow = (row) => {
-    return row.map( element => (
-      <Cell value={element}></Cell>
+    return row.map( cell => (
+      <Cell cell={cell} setBoard={ setBoard }></Cell>
     ))
   }
 
