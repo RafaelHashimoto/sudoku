@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css'; // Global styles
 import App from './App'; // The root component of your application
 
-// If you're using service workers, you might also import serviceWorker from './serviceWorker';
+const root = createRoot(document.getElementById('root'));
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
 );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Context from './Context'
 import createGrid from '../../utils/sudokuBuilder'
 
@@ -7,7 +7,7 @@ export const ContextProvider = ({children}) => {
     let board = createGrid()
     for(let row = 0; row < 9; row ++) {
       for(let column = 0; column < 9; column ++) {
-        let value = ((fillCell()) ? board[row][column] : undefined )
+        let value = ((fillCell()) ? board[row][column] : '' )
         board[row][column] = gameCell(value, row, column)
       }
     }
@@ -15,11 +15,17 @@ export const ContextProvider = ({children}) => {
   }
 
   const gameCell = (value, rowIndex, columnIndex) => {
-    return { value: value, valid: true, rowIndex: rowIndex, columnIndex: columnIndex }
+    return {
+      value: value,
+      valid: true,
+      rowIndex: rowIndex,
+      columnIndex: columnIndex,
+      disabled: (value !== '')
+    }
   }
 
   const fillCell = () => {
-    return Math.floor(Math.random() * 2) == 1
+    return Math.floor(Math.random() * 2) === 1
   }
 
 
@@ -32,3 +38,15 @@ export const ContextProvider = ({children}) => {
     </Context.Provider>
   )
 }
+
+
+
+b - a =  3
+a + c =  18
+b - c =  17
+a > b:  False
+d < b:  False
+d == e:  False
+a != a:  False
+a >= d:  False
+d <= e:  False

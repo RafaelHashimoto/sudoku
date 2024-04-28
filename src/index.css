@@ -22,11 +22,10 @@ body {
   margin: auto; /* Center the grid horizontally */
 }
 
-.board-item {
+.board-cell {
   width: 60px; /* Each cell is 60px wide */
   height: 60px; /* Each cell is 60px tall */
   border: 1px solid #0E1534; /* Cell border */
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px; /* Adjust based on your needs */
@@ -38,8 +37,13 @@ body {
   color: var(--text-color);
 }
 
-.board-item:disabled {
+.board-cell:disabled {
   background-color: var(--background-color);
+  color: var(--secondary-color);
+}
+
+.board-cell-invalid {
+  background-color: #FF0000;
   color: var(--secondary-color);
 }
 
