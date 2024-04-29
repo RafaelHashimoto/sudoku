@@ -38,15 +38,3 @@ export const ContextProvider = ({children}) => {
     </Context.Provider>
   )
 }
-
-
-
-b - a =  3
-a + c =  18
-b - c =  17
-a > b:  False
-d < b:  False
-d == e:  False
-a != a:  False
-a >= d:  False
-d <= e:  False

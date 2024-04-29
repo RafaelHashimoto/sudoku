@@ -2,7 +2,11 @@ const Cell = ({cell, handleBoardChange, invalids}) => {
 
   const handleChange = (e) => {
     const newValue = parseInt(e.target.value)
-    handleBoardChange(cell.rowIndex, cell.columnIndex, newValue)
+    if (isNaN(newValue)) {
+      handleBoardChange(cell.rowIndex, cell.columnIndex, '')
+    } else {
+      handleBoardChange(cell.rowIndex, cell.columnIndex, newValue)
+    }
   }
 
   const className = () => {
@@ -21,7 +25,7 @@ const Cell = ({cell, handleBoardChange, invalids}) => {
     if (invalids.invalidCols.has(cell.columnIndex)) {
       return false
     }
-
+    
     if (invalids.invalidGrids.has(getSubgridIndex())) {
       return false
     }
@@ -30,7 +34,7 @@ const Cell = ({cell, handleBoardChange, invalids}) => {
   }
 
   const getSubgridIndex = () => {
-    return Math.floor(cell.rowIndex / 3) * ( 3 + Math.floor(cell.columnIndex / 3));
+    return Math.floor(cell.rowIndex / 3) * 3 + Math.floor(cell.columnIndex / 3);
   }
 
   return (

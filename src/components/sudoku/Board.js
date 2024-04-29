@@ -12,9 +12,11 @@ const Board = () => {
   });
 
   const updateValidation = () => {
-    debugger
-    const { invalidRows, invalidCols, invalidGrids } = validateSudoku(board);
-    setInvalids({ invalidRows, invalidCols, invalidGrids });
+    setInvalids({
+      invalidRows:  invalidRows(),
+      invalidCols:  invalidColumns(),
+      invalidGrids: invalidSubGrids()
+    });
   };
 
   useEffect(() => {
@@ -53,10 +55,10 @@ const Board = () => {
   const invalidColumns = () => {
     const columns = new Set();
 
-    for (let row = 0; row < board.length; row ++) {
+    for (let column = 0; column < board.length; column ++) {
       let seen = new Set();
 
-      for (let column = 0; column < board.length; column ++) {
+      for (let row = 0; row < board.length; row ++) {
         if (board[row][column].value !== '') {
           if (seen.has(board[row][column].value)) {
             columns.add(column)
@@ -86,16 +88,19 @@ const Board = () => {
 
   const isValidSubGrid = (rowIndex, colIndex) => {
     let seen = new Set();
+    let isValid = true
+    board.slice(rowIndex, rowIndex + 3).forEach ( row => {
 
-    board.slice(rowIndex, rowIndex + 2).forEach ( row => {
-      row.slice(colIndex, colIndex + 2).forEach ( column => {
-        if (seen.has(column.value)) {
-          return false
+      row.slice(colIndex, colIndex + 3).forEach ( column => {
+        if (column.value !==  '' && seen.has(column.value)) {
+          isValid = false
         } else {
           seen.add(column.value)
         }
-       })
+      })
     })
+
+    return isValid
   }
 
   function getSubgridIndex(row, col) {
