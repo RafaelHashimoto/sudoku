@@ -1,7 +1,8 @@
 const Cell = ({cell, handleBoardChange, invalids}) => {
 
   const handleChange = (e) => {
-    const newValue = parseInt(e.target.value)
+    const input = e.target.value
+    const newValue = parseInt(input.charAt(input.length - 1))
     if (isNaN(newValue)) {
       handleBoardChange(cell.rowIndex, cell.columnIndex, '')
     } else {
