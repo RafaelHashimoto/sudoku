@@ -10,11 +10,19 @@ const Cell = ({cell, handleBoardChange, invalids}) => {
     }
   }
 
+  const sudokuBorder = () => {
+    if (cell.columnIndex < 6 && (cell.columnIndex+1)%3 === 0) {
+      return 'columnBorder'
+    } else {
+      return ''
+    }
+  }
+
   const className = () => {
     if (isValid()) {
-      return 'board-cell'
+      return `board-cell ${sudokuBorder()}`
     } else {
-      return 'board-cell board-cell-invalid'
+      return `board-cell ${sudokuBorder()} board-cell-invalid`
     }
   }
 

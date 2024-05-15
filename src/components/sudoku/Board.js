@@ -107,22 +107,31 @@ const Board = () => {
     return Math.floor(row / 3) * ( 3 + Math.floor(col / 3));
   }
 
+  const sudokuBorder = (index) => {
+    if (index < 6 && (index + 1)%3 === 0) { return 'rowBorder' } else { return '' }
+  }
+    
+
   const renderRow = (row, rowIndex) => {
     return row.map( (cell, columnIndex) => (
       <Cell key={`cell-${rowIndex}-${columnIndex}`} cell={cell} handleBoardChange={ handleBoardChange } invalids={invalids} ></Cell>
     ))
   }
 
+  const renderRows = () => {
+    return board.map( (row, index) => (
+      <div id={`row-${index}`} key={index} className={`board-row ${ sudokuBorder(index) }`} >
+        { renderRow(row, index) }
+      </div>
+    ))
+  }
+
   return (
-    <div className='board-container'>
-      {
-        board.map( (row, index) => (
-          <div id={`row-${index}`} key={index} className='board-row' >
-            { renderRow(row, index) }
-          </div>
-        ))
-      }
-    </div>
+    <table className='board-container'>
+      <tbody>
+        { renderRows() }
+      </tbody>
+    </table>
   )
 }
 
