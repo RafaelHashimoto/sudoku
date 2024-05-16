@@ -1,15 +1,18 @@
 
 import { ContextProvider } from './components/sudoku/ContextProvider';
 import Board from './components/sudoku/Board'
-
+import Header from './components/ui/Header'
 const App = () => {
 
   return (
-    <ContextProvider>
-      <div className='app' >
-        <Board/>
-      </div>
-    </ContextProvider>
+    <>
+      <Header/>
+      <ContextProvider>
+        <div className='app' >
+          <Board/>
+        </div>
+      </ContextProvider>
+    </>
   )
 }
 

@@ -28,9 +28,13 @@ export const ContextProvider = ({children}) => {
     return Math.floor(Math.random() * 2) === 1
   }
 
-
   const [board, setBoard] = useState(setupBoard())
-  const value = { board, setBoard }
+  
+  const resetPuzzle = () => {
+    setBoard(setupBoard());
+  };
+  
+  const value = { board, setBoard, resetPuzzle }
 
   return(
     <Context.Provider value={value}>

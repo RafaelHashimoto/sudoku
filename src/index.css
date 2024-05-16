@@ -2,10 +2,12 @@
   --primary-color: #5584AC; /* Muted Blue */
   --secondary-color: #E5F3F6; /* Dark Slate Blue */
   --accent-color: #FEEFDD; /* Warm Beige */
-  --background-color: #0c233b; /* Pale Cream */
+  --background-color: #1B272A;
+  --second-background-color: #10161D;
+  --blocked-color: #648b8f;
   --text-color: #0E1534; /* Muted Brown */
+  --border-color: #010409;
 }
-
 
 body {
   background-color: var(--background-color);
@@ -13,17 +15,33 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.header {
+  padding: 50px 0 50px 0;
+  font-size: 3rem;
+  color: #FCEEE6;
+  text-align: center;
+}
+
+.board {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid 
+}
+
 .board-cell {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #0E1534; /* Cell border */
-  font-size: 20px;
-  background-color: #FEEFDD;
+  max-width: 60px;
+  min-height: 60px;
+  border: 1px solid var(--border-color); /* Cell border */
+  font-size: 2rem;
+  background-color: #FCEEE6;
+  color: #010409;
+  font-weight: bold;
+  text-align: center;
 }
 
 .board-cell:disabled {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  background-color: #5A8979;
+  color: #010409;
 }
 
 .board-cell-invalid {
@@ -38,9 +56,42 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .rowBorder {
-  border-bottom:2px solid black;
+  border-bottom: 3px solid var(--border-color);
 }
 
 .columnBorder {
-  border-right:2px solid black;
+  border-right:  3px solid var(--border-color);
+}
+
+
+.buttons-wrapper {
+  padding-top: 50px;
+  max-width: 602px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 50px;
+  background-color: #2E3D42;
+  color: #FCEEE6;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #617f8a;
+  color: #d3c7c1;
+}
+
+.button:active {
+  color: #2E3D42;
+  background-color: #FCEEE6;
 }

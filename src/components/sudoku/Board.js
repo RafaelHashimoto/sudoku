@@ -3,7 +3,7 @@ import Context from './Context'
 import Cell from './Cell'
 
 const Board = () => {
-  const { board, setBoard } = useContext(Context)
+  const { board, setBoard, resetPuzzle } = useContext(Context)
 
   const [invalids, setInvalids] = useState({
     invalidRows: new Set(),
@@ -127,11 +127,18 @@ const Board = () => {
   }
 
   return (
-    <table className='board-container'>
-      <tbody>
-        { renderRows() }
-      </tbody>
-    </table>
+    <>
+      <table className='board'>
+        <tbody>
+          { renderRows() }
+        </tbody>
+      </table>
+      <div className='buttons-wrapper'>
+        <button className='button'>VALIDATE</button>
+        <button className='button' onClick={ () => { resetPuzzle() } }>RELOAD</button>
+      </div>
+    </>
+
   )
 }
 
