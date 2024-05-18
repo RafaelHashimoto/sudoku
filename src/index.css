@@ -45,7 +45,7 @@ body {
 }
 
 .board-cell-invalid {
-  background-color: #FF0000;
+  background-color: #c96060;
   color: var(--secondary-color);
 }
 

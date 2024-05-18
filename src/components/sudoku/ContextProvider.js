@@ -24,6 +24,7 @@ export const ContextProvider = ({children}) => {
     }
   }
 
+  // control game complexity
   const fillCell = () => {
     return Math.floor(Math.random() * 2) === 1
   }
