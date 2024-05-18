@@ -5,6 +5,7 @@ Welcome to the Sudoku Game, a dynamic and engaging puzzle game built with React!
 ## Features
 - *Dynamic Puzzle Generation*: Each Sudoku puzzle is generated dynamically using a backfill algorithm.
 - *Randomized Subgrid*: The randomizeSubGrid method ensures that a 3x3 grid is filled with numbers from 1 to 9 in random order, providing a unique puzzle each time.
+- *Board Validation*: The validation runs everytime a you fill a cell with a number giving you a feedback when you put an invalid number in that cell.
 
 ## Getting Started
 
