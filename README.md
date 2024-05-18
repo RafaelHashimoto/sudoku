@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# SUDOKU
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Sudoku Game, a dynamic and engaging puzzle game built with React! This project was developed to enhance my React skills and to have some fun.
 
-## Available Scripts
+## Features
+- *Dynamic Puzzle Generation*: Each Sudoku puzzle is generated dynamically using a backfill algorithm.
+- *Randomized Subgrid*: The randomizeSubGrid method ensures that a 3x3 grid is filled with numbers from 1 to 9 in random order, providing a unique puzzle each time.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+### Prerequisites
+Make sure you have the following installed:
+- Docker (if you prefer to use Docker)
+- Node.js (if you prefer to run the project locally)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Docker
+1. Build the Docker Image:
+`docker build -t sudoku-game .`
+2. Run the container:
+`docker run -p 3000:3000 sudoku-game`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Node
+1. Install Dependencies:
+`npm install`
+2. Start server:
+`npm start`
 
-### `npm test`
+## Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/RafaelHashimoto/sudoku/assets/7706885/3a76b824-5162-4128-8719-3df8dc0b0cea)
 
-### `npm run build`
+### Contributing
+Feel free to fork this repository and submit pull requests. Any contributions to improve the game are welcome!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contact
+If you have any questions or suggestions, feel free to contact me at [hashimotorafa@gmail.com].
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy playing Sudoku and happy coding!
